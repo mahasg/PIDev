@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d47440cc-19ba-4725-b35a-751da3991166" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="ProjectId" id="1p3d62AuiM28YaciaLuXRct5cgV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\projet_back\projet_back\projet\templates" />
+      <recent name="C:\xampp\htdocs\projet_back\projet_back\projet\templates\reservation" />
+      <recent name="C:\xampp\htdocs\projet_back\projet_back\projet\templates\demande" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="DemandeResRepository" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner directory="$PROJECT_DIR$/projet_back/projet/src/Repository" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d47440cc-19ba-4725-b35a-751da3991166" name="Default Changelist" comment="" />
+      <created>1614415528515</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614415528515</updated>
+      <workItem from="1614415529673" duration="342000" />
+      <workItem from="1614416104843" duration="4659000" />
+      <workItem from="1614427208821" duration="35332000" />
+      <workItem from="1614588515372" duration="8223000" />
+      <workItem from="1614711922454" duration="12534000" />
+      <workItem from="1614776550761" duration="20249000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="276" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1614800710729">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="276" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1614800710729" />
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1614464741620">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1614464741620" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614802187835">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1614802187835" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1614785942378">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1614785942378" />
+    <state x="429" y="87" key="NewPhpClassDialog" timestamp="1614547958459">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="429" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1614547958459" />
+    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1614459072558">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1614459072558" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1614808727006">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1614808727006" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1614556514019">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1614556514019" />
+  </component>
+</project>

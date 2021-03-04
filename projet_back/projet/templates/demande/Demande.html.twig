@@ -1,0 +1,25 @@
+<table border="2">
+
+    {% for i in liste %}
+        <tr>
+
+            <td>
+                {{ i.cinClient }}
+            </td>
+            <td>
+                {{ i.nomClient }}
+            </td>
+            <td>
+                {{ i.date |date('d-m-Y') }}
+            </td>
+            <td>
+                {{ i.duree }}
+            </td>
+            <td>
+                {{ i.matricule }}
+            </td>
+
+
+        </tr>
+    {% endfor %}
+</table>
