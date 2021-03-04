@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+<table border="2">
+
+    <tr>
+        <td>id emp</td>
+        <td>nomemp</td>
+        <td>prenomemp</td>
+        <td>numtelemp</td>
+        <td>adresseemp</td>
+
+
+    </tr>
+
+    {% for x in listemploye %}
+
+        <tr>
+
+
+            <td> {{x.idemp}}</td>
+            <td> {{x.nomemp}}</td>
+            <td> {{x.prenomemp}}</td>
+            <td> {{x.numtelemp}}</td>
+            <td> {{x.adresseemp}}</td>
+
+            <td> <a href="{{ path('updateEmploye',{'idemp':x.idemp}) }}">Update employe</a></td>
+            <td> <a href="{{ path('delete',{'idemp':x.idemp}) }}">Delete employe</a></td>
+        </tr>
+
+    {% endfor %}
+</table>
+{% endblock  %}
