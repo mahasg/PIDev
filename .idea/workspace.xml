@@ -1,15 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="eaba78f3-152a-4f49-a64b-3e60a745e5da" name="Default Changelist" comment="" />
+    <list default="true" id="eaba78f3-152a-4f49-a64b-3e60a745e5da" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/projet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projet.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PIDev" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/demo-page.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/examples.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/geochart.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/hover.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/magnific-popup.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/404.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/b3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/climate.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/ftr-icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/login.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/mess.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/next.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/next.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/p1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/p2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/p3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/p4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/p5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/p6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/p7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/p8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/prev.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/prev.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/pro1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/pro10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/pro12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/pro2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/pro3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/pro4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/pro5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/pro6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/pro7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/pro8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/pro9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/reg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/search.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/search.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/shoppy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/tick.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/visit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/Chart.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/bars.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/chartinator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/gmaps.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-2.1.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery.magnific-popup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery.nicescroll.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/modernizr.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/nivo-lightbox.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/skycons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cinema/add.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cinema/add.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cinema/afficher.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cinema/afficher.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -114,14 +215,19 @@
       <path value="$PROJECT_DIR$/vendor/symfony/security-guard" />
       <path value="$PROJECT_DIR$/vendor/symfony/form" />
       <path value="$PROJECT_DIR$/vendor/symfony/security-http" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
     </include_path>
   </component>
   <component name="ProjectId" id="1p2GL2RIDEWZKQJpOdm13CLBaBa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -132,7 +238,13 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="app\" />
+    </option>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -143,10 +255,48 @@
       <option name="presentableId" value="Default" />
       <updated>1614373711393</updated>
       <workItem from="1614373712460" duration="7687000" />
+      <workItem from="1614800951248" duration="1989000" />
+      <workItem from="1614816172723" duration="65000" />
+      <workItem from="1614841599134" duration="2854000" />
+      <workItem from="1615235924034" duration="9683000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="797" y="49" key="#com.intellij.ide.util.MemberChooser" timestamp="1615243337756">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="797" y="49" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1615243337756" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1614846946350">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1614846946350" />
+    <state x="760" y="90" key="NewPhpClassDialog" timestamp="1615243243460">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="760" y="90" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1615243243460" />
+    <state x="748" y="175" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1615243383056">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="748" y="175" key="com.jetbrains.php.test.PhpNewTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1615243383056" />
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1615240030532">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1615240030532" />
   </component>
 </project>

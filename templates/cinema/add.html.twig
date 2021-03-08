@@ -1,18 +1,23 @@
-{% extends 'base.html.twig' %}
+{% extends 'reclamation.html.twig' %}
 {% block title %}
 
     <div class="section-title">
+        <form valign="middle"  action="#" id="contact_form" class="contact_form">
         <h2>Ajouter une salle de cinema</h2>
+                <div class="contact_form_name input_field" >
 
     {{ form_start(formCinema,{'attr':{'novalidate' : 'novalidate'}}) }}
     {{ form_errors(formCinema.num)}}
     {{ form_label(formCinema.num,"Numéro de la salle : ") }}
     {{ form_widget(formCinema.num)}}
 
-
+                </div>
+            <div class="contact_form_name input_field" >
     {{ form_errors(formCinema.date)}}
 
     {{ form_errors(formCinema.film)}}
     {{ form_end(formCinema) }}
+            </div>
+        </form>
         </div>
 {% endblock %}

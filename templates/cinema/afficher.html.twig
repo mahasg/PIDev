@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'reclamation.html.twig' %}
 {% block title %}
 <table border="2">
     <tr>
@@ -6,8 +6,8 @@
         <td>date</td>
         <td>heure</td>
         <td>film</td>
-        <td>delete</td>
-        <td>update</td>
+        <td>Reserver</td>
+
 </tr>
 
     {% for x in liststudent %}
@@ -16,8 +16,8 @@
             <td> {{ x.date |date('d/m/Y') }}</td>
             <td> {{ x.heurep |date('H:i') }}</td>
             <td> {{ x.film}}</td>
-            <td><a href="{{ path('delete',{'num':x.num}) }}">EFFACER</a></td>
-            <td><a href="{{ path('updateCinema',{'num':x.num}) }}">modifier</a></td>
+            <td><button>{#  <a href="{{ path('delete',{'num':x.num}) }}">#}Réserver</button></td>
+
         </tr>
 
     {% endfor %}
