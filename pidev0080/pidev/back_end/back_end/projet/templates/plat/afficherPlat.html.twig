@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    <script>
+        $(document).ready(function(){
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
+    <div class="chit-chat-heading">
+        La liste des Plats
+    </div>
+    <!--
+<table border="2">
+
+    <tr>
+        <td>Id plat</td>
+        <td>Nom plat</td>
+        <td>Prix plat</td>
+        <td>Categorie plat</td>
+        <td>Update</td>
+        <td>Delete</td>
+
+
+    </tr>
+
+    {% for x in listplat %}
+
+        <tr>
+
+
+            <td> {{x.idp}}</td>
+            <td> {{x.nomp}}</td>
+            <td> {{x.prixp}}</td>
+            <td> {{x.categorie}}</td>
+            <td><a href="{{ path('updatePlat',{'idp':x.idp}) }}">update</a></td>
+            <td><a href="{{ path('deletePlat',{'idp':x.idp}) }}">delete</a></td>
+
+        </tr>
+
+    {% endfor %}
+
+
+</table>
+-->
+    <br>
+
+    <input class="form-control" id="myInput" type="text" placeholder="Rechercher..">
+
+    <div class="card">
+
+        <div class="card-block table-border-style">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <td>#</td>
+                        <th>Nom</th>
+                        <th>Prix plat</th>
+                        <th>Categorie plat</th>
+                        <th>Image</th>
+                        <th>descption</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    {% set count = 0 %}
+                    <tbody id="myTable">
+                    {% set count = count+1 %}
+                    {% for plat in listplat %}
+                        <tr>
+                            <td>{{ count }}</td>
+                            <td>{{ plat.nomp }}</td>
+                            <td>{{ plat.prixp }}</td>
+                            <td>{{ plat.categorie }}</td>
+                            <td> <img src="{{ asset('/images/productImageUploads/' ~ plat.imagep) }}" height="50px" width="50px"></td>
+                            <td>{{ plat.description }}</td>
+
+
+                            <td>
+                                <a href="{{ path("updatePlat",{'idp':plat.idp}) }}" ><i class="fa fa-edit" style="font-size:18px"></i></a>
+                                <a href="{{ path("deletePlat",{'idp':plat.idp}) }}" ><i class="fa fa-trash" style="font-size:18px"></i></a>
+                                {% set count = count+1 %}
+
+                            </td>
+                        </tr>
+                    {% endfor %}
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock  %}

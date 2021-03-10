@@ -1,0 +1,121 @@
+{% extends 'baseFront.html.twig' %}
+{% block bodyContainer %}
+<!--
+    <div class="chit-chat-heading">
+        La liste des Plats
+    </div>
+
+<table border="2">
+
+    <tr>
+        <td>Id plat</td>
+        <td>Nom plat</td>
+        <td>Prix plat</td>
+        <td>Categorie plat</td>
+        <td>Update</td>
+        <td>Delete</td>
+
+
+    </tr>
+
+    {% for x in listplat %}
+
+        <tr>
+
+
+            <td> {{x.idp}}</td>
+            <td> {{x.nomp}}</td>
+            <td> {{x.prixp}}</td>
+            <td> {{x.categorie}}</td>
+            <td><a href="{{ path('updatePlat',{'idp':x.idp}) }}">update</a></td>
+            <td><a href="{{ path('deletePlat',{'idp':x.idp}) }}">delete</a></td>
+
+        </tr>
+
+    {% endfor %}
+</table>
+-->
+
+    <!-- Intro -->
+
+
+    <div class="offers">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h2 class="section_title">tout nos délice</h2>
+                </div>
+            </div>
+
+
+    <div class="float-left">
+        <br><br<br> <br><br<br><br><br<br><br><br<br><br><br<br>
+
+        {% for categorie in listcategorie %}
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center" style="color:purple;">
+
+                    <a href="{{ path("TriParategorie",{'idc':categorie.idc}) }}" >
+                    {{ categorie.nomc }}
+                    <span class="badge badge-primary badge-pill">
+                       4
+                    </span>
+                    </a>
+
+                </li>
+            </ul>
+        {% endfor %}
+
+    </div>
+
+            <br><br<br> <br><br<br><br><br<br><br><br<br><br><br<br>
+
+            <div class="row offers_items">
+                {% for plat in listplat %}
+
+
+                <!-- Offers Item -->
+                <div class="col-lg-6 offers_col">
+                    <div class="offers_item">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="offers_image_container">
+                                    <div class="offers_image_background" ><img src="{{ asset('/images/productImageUploads/' ~ plat.imagep) }}" ></div>
+                                    <div class="offer_name"><a href="#">{{ plat.nomp }}</a></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="offers_content">
+                                    <div class="offers_price">{{ plat.prixp }}<span>DT</span></div>
+                                    <div class="rating_r rating_r_4 offers_rating">
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                    </div>
+                                    <p class="offers_text">{{ plat.description }}</p>
+                                    <div class="offers_icons">
+                                        <ul class="offers_icons_list">
+                                            <li class="offers_icons_item"><img src="images/post.png" alt=""></li>
+                                            <li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
+                                            <li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
+                                            <li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
+                                        </ul>
+                                    </div>
+                                    <div class="offers_link"><a href="offers.html">read more</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br><br>
+                </div>
+
+
+
+
+                <!-- Testimonials -->
+                {% endfor %}
+            </div></div>
+
+
+{% endblock  %}

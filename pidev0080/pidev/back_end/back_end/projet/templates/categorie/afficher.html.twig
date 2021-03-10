@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block title %}
+    <script>
+        $(document).ready(function(){
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
+    <div class="chit-chat-heading">
+        La liste des Categories
+    </div>
+    <!--
+<table border="2">
+
+    <tr>
+        <td>Id categorie</td>
+        <td>Nom categorie</td>
+        <td>Update</td>
+        <td>Delete</td>
+
+
+    </tr>
+
+    {% for x in listcategorie %}
+
+        <tr>
+
+
+            <td> {{x.idc}}</td>
+            <td> {{x.nomc}}</td>
+            <td><a href="{{ path('updateCategorie',{'idc':x.idc}) }}">update</a></td>
+            <td><a href="{{ path('deleteCategorie',{'idc':x.idc}) }}">delete</a></td>
+        </tr>
+
+    {% endfor %}
+</table>
+-->
+    <br>
+    <input class="form-control" id="myInput" type="text" placeholder="Rechercher..">
+
+    <div class="card">
+
+        <div class="card-block table-border-style">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <td>#</td>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    {% set count = 0 %}
+                    <tbody id="myTable">
+                    {% set count = count+1 %}
+                    {% for categorie in listcategorie %}
+                        <tr>
+                            <td>{{ count }}</td>
+                            <td>{{ categorie.idc }}</td>
+                            <td>{{ categorie.nomc }}</td>
+
+                            <td>
+                                <a href="{{ path("updateCategorie",{'idc':categorie.idc}) }}" ><i class="fa fa-edit" style="font-size:18px"></i></a>
+                                <a href="{{ path("deleteCategorie",{'idc':categorie.idc}) }}" ><i class="fa fa-trash" style="font-size:18px"></i></a>
+                                {% set count = count+1 %}
+
+                            </td>
+                        </tr>
+                    {% endfor %}
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock  %}
