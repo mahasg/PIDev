@@ -221,7 +221,7 @@
 
             icons.play();
         </script>
-
+        <title></title>
 
 
     </head> {% endblock %}
@@ -234,178 +234,20 @@
             <div class="header-main">
                 <div class="header-left">
                     <div class="logo-name">
-                        <a href="index.html.twig"> <h1>Shoppy</h1>
+                        <a href="index.html.twig"> <h1>happy park</h1>
                             <!--<img id="logo" src="" alt="Logo"/>-->
                         </a>
                     </div>
-                    <!--search-box
-                    <div class="search-box">
-                        <form action="{{ path ('search') }}">
-                            <input type="text" placeholder="Search..." required="">
-                            <input type="submit" value="">
-                        </form>
-                    </div>//end-search-box-->
+
                     <div class="clearfix"> </div>
                 </div>
                 <div class="header-right">
                     <div class="profile_details_left"><!--notifications of menu start -->
-                        <ul class="nofitications-dropdown">
-                            <li class="dropdown head-dpdn">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope"></i><span class="badge">3</span></a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <div class="notification_header">
-                                            <h3>You have 3 new messages</h3>
-                                        </div>
-                                    </li>
-                                    <li><a href="#">
-                                            <div class="user_img"><img src="{{ asset( 'images/p4.png')}}" alt=""></div>
-                                            <div class="notification_desc">
-                                                <p>Lorem ipsum dolor</p>
-                                                <p><span>1 hour ago</span></p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </a></li>
-                                    <li class="odd"><a href="#">
-                                            <div class="user_img"><img src="{{ asset( 'images/p2.png')}}" alt=""></div>
-                                            <div class="notification_desc">
-                                                <p>Lorem ipsum dolor </p>
-                                                <p><span>1 hour ago</span></p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <div class="user_img"><img src="{{ asset( 'images/p3.png')}}" alt=""></div>
-                                            <div class="notification_desc">
-                                                <p>Lorem ipsum dolor</p>
-                                                <p><span>1 hour ago</span></p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </a></li>
-                                    <li>
-                                        <div class="notification_bottom">
-                                            <a href="#">See all messages</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown head-dpdn">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell"></i><span class="badge blue">3</span></a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <div class="notification_header">
-                                            <h3>You have 3 new notification</h3>
-                                        </div>
-                                    </li>
-                                    <li><a href="#">
-                                            <div class="user_img"><img src="{{ asset( 'images/p5.png')}}" alt=""></div>
-                                            <div class="notification_desc">
-                                                <p>Lorem ipsum dolor</p>
-                                                <p><span>1 hour ago</span></p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </a></li>
-                                    <li class="odd"><a href="#">
-                                            <div class="user_img"><img src="{{ asset( 'images/p6.png')}}" alt=""></div>
-                                            <div class="notification_desc">
-                                                <p>Lorem ipsum dolor</p>
-                                                <p><span>1 hour ago</span></p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <div class="user_img"><img src="{{ asset( 'images/p7.png')}}" alt=""></div>
-                                            <div class="notification_desc">
-                                                <p>Lorem ipsum dolor</p>
-                                                <p><span>1 hour ago</span></p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </a></li>
-                                    <li>
-                                        <div class="notification_bottom">
-                                            <a href="#">See all notifications</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown head-dpdn">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-tasks"></i><span class="badge blue1">9</span></a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <div class="notification_header">
-                                            <h3>You have 8 pending task</h3>
-                                        </div>
-                                    </li>
-                                    <li><a href="#">
-                                            <div class="task-info">
-                                                <span class="task-desc">Database update</span><span class="percentage">40%</span>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                            <div class="progress progress-striped active">
-                                                <div class="bar yellow" style="width:40%;"></div>
-                                            </div>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <div class="task-info">
-                                                <span class="task-desc">Dashboard done</span><span class="percentage">90%</span>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                            <div class="progress progress-striped active">
-                                                <div class="bar green" style="width:90%;"></div>
-                                            </div>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <div class="task-info">
-                                                <span class="task-desc">Mobile App</span><span class="percentage">33%</span>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                            <div class="progress progress-striped active">
-                                                <div class="bar red" style="width: 33%;"></div>
-                                            </div>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <div class="task-info">
-                                                <span class="task-desc">Issues fixed</span><span class="percentage">80%</span>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                            <div class="progress progress-striped active">
-                                                <div class="bar  blue" style="width: 80%;"></div>
-                                            </div>
-                                        </a></li>
-                                    <li>
-                                        <div class="notification_bottom">
-                                            <a href="#">See all pending tasks</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+
                         <div class="clearfix"> </div>
                     </div>
                     <!--notification menu end -->
-                    <div class="profile_details">
-                        <ul>
-                            <li class="dropdown profile_details_drop">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <div class="profile_img">
-                                        <span class="prfil-img"><img src="{{ asset( 'images/p1.png')}}" alt=""> </span>
-                                        <div class="user-name">
-                                            <p>Malorum</p>
-                                            <span>Administrator</span>
-                                        </div>
-                                        <i class="fa fa-angle-down lnr"></i>
-                                        <i class="fa fa-angle-up lnr"></i>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </a>
-                                <ul class="dropdown-menu drp-mnu">
-                                    <li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li>
-                                    <li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li>
-                                    <li> <a href="{{ path ('app_logout')}}"><i class="fa fa-sign-out"></i> Logout</a> </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+
                     <div class="clearfix"> </div>
                 </div>
                 <div class="clearfix"> </div>
@@ -483,9 +325,9 @@
                             <div class="table-responsive">
                                 <table class="table table-hover">
 
-
                                     {% block title %} {% endblock %}
                                     {% block body %} {% endblock %}
+
 
                                 </table>
                             </div>
@@ -580,72 +422,9 @@
                 </div>
                 <!--main page chit chating end here-->
                 <!--main page chart start here-->
-                <div class="main-page-charts">
-                    <div class="main-page-chart-layer1">
-                        <div class="col-md-6 chart-layer1-left">
-                            <div class="glocy-chart">
-                                <div class="span-2c">
-                                    <h3 class="tlt">Sales Analytics</h3>
-                                    <canvas id="bar" height="300" width="400" style="width: 400px; height: 300px;"></canvas>
 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 chart-layer1-right">
-                            <div class="user-marorm">
-                                <div class="malorum-top">
-                                </div>
-                                <div class="malorm-bottom">
-                                    <span class="malorum-pro"> </span>
-                                    <h4>unde omnis iste</h4>
-                                    <h2>Melorum</h2>
-                                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising.</p>
-                                    <ul class="malorum-icons">
-                                        <li><a href="#"><i class="fa fa-facebook"> </i>
-                                                <div class="tooltip"><span>Facebook</span></div>
-                                            </a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"> </i>
-                                                <div class="tooltip"><span>Twitter</span></div>
-                                            </a></li>
-                                        <li><a href="#"><i class="fa fa-google-plus"> </i>
-                                                <div class="tooltip"><span>Google</span></div>
-                                            </a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </div>
                 <!--main page chart layer2-->
-                <div class="chart-layer-2">
 
-                    <div class="col-md-6 chart-layer2-right">
-                        <div class="prograc-blocks">
-                            <!--Progress bars-->
-                            <div class="home-progres-main">
-                                <h3>Total Sales</h3>
-                            </div>
-                            <div class='bar_group'>
-                                <div class='bar_group__bar thin' label='Rating' show_values='true' tooltip='true' value='343'></div>
-                                <div class='bar_group__bar thin' label='Quality' show_values='true' tooltip='true' value='235'></div>
-                                <div class='bar_group__bar thin' label='Amount' show_values='true' tooltip='true' value='550'></div>
-                                <div class='bar_group__bar thin' label='Farming' show_values='true' tooltip='true' value='456'></div>
-                            </div>
-
-
-                            <!--//Progress bars-->
-                        </div>
-                    </div>
-                    <div class="col-md-6 chart-layer2-left">
-                        <div class="content-main revenue">
-                            <h3>Total Revenue</h3>
-                            <canvas id="radar" height="300" width="300" style="width: 300px; height: 300px;"></canvas>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
 
                 <!--climate start here-->
                 <div class="climate">
@@ -754,61 +533,7 @@
         </div>
     </div>
     <!--slider menu-->
-    <div class="sidebar-menu">
-        <div class="logo"> <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="#"> <span id="logo" ></span>
-                <!--<img id="logo" src="" alt="Logo"/>-->
-            </a> </div>
-        <div class="menu">
-            <ul id="menu" >
-                <li id="menu-home" ><a href="base.html.twig"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
-                <li><a href="#"><i class="fa fa-cogs"></i><span>Employe</span><span class="fa fa-angle-right" style="float: right"></span></a>
-                    <ul>
-                        <li><a href="{{ path ('afficher')}}">Afficher Employes</a></li>
-                        <li><a href="{{ path ('addEmploye')}}">Ajouter Employe</a></li>
-                        {# <li><a href="{{ path ('updateEmploye')}}">Modifier Employes</a></li>
-                        <li><a href="{{ path ('delete')}}">Supprimer Employes</a></li> #}
 
-                    </ul>
-                </li>
-                <li id="menu-comunicacao" ><a href="#"><i class="fa fa-book nav_icon"></i><span>Conge</span><span class="fa fa-angle-right" style="float: right"></span></a>
-                    <ul id="menu-comunicacao-sub" >
-                        <li id="menu-mensagens" style="width: 120px" ><a href="{{ path ('afficherc')}}">Afficher Conges</a>
-                        </li>
-                        <li id="menu-arquivos" ><a href="{{ path ('addConge')}}">Ajouter Conge</a></li>
-
-                    </ul>
-                </li>
-                <li><a href="maps.html"><i class="fa fa-map-marker"></i><span>Maps</span></a></li>
-                <li id="menu-academico" ><a href="#"><i class="fa fa-file-text"></i><span>Pages</span><span class="fa fa-angle-right" style="float: right"></span></a>
-                    <ul id="menu-academico-sub" >
-                        <li id="menu-academico-boletim" ><a href="login.html">Login</a></li>
-                        <li id="menu-academico-avaliacoes" ><a href="signup.html">Sign Up</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="charts.html"><i class="fa fa-bar-chart"></i><span>Charts</span></a></li>
-                <li><a href="#"><i class="fa fa-envelope"></i><span>Mailbox</span><span class="fa fa-angle-right" style="float: right"></span></a>
-                    <ul id="menu-academico-sub" >
-                        <li id="menu-academico-avaliacoes" ><a href="inbox.html">Inbox</a></li>
-                        <li id="menu-academico-boletim" ><a href="inbox-details.html">Compose email</a></li>
-                    </ul>
-                </li>
-                <li><a href="#"><i class="fa fa-cog"></i><span>System</span><span class="fa fa-angle-right" style="float: right"></span></a>
-                    <ul id="menu-academico-sub" >
-                        <li id="menu-academico-avaliacoes" ><a href="404.html">404</a></li>
-                        <li id="menu-academico-boletim" ><a href="blank.html">Blank</a></li>
-                    </ul>
-                </li>
-                <li><a href="#"><i class="fa fa-shopping-cart"></i><span>E-Commerce</span><span class="fa fa-angle-right" style="float: right"></span></a>
-                    <ul id="menu-academico-sub" >
-                        <li id="menu-academico-avaliacoes" ><a href="product.html">Product</a></li>
-                        <li id="menu-academico-boletim" ><a href="price.html">Price</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="clearfix"> </div>
 </div>
 
 </body>

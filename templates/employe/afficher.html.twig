@@ -1,27 +1,32 @@
 {% extends 'base.html.twig' %}
 {% block title %}
 <table border="2">
-
+<div class="chit-chat-heading">liste des employes</div>
     <tr>
-        <td>id emp</td>
-        <td>nomemp</td>
-        <td>prenomemp</td>
-        <td>numtelemp</td>
-        <td>adresseemp</td>
-
+        <td>id employe</td>
+        <td>nom employe</td>
+        <td>prenom employe</td>
+        <td>numero telephone employe</td>
+        <td>adresse mail employe</td>
+        <td>son id conge</td>
 
     </tr>
+    <form method="post" action="{{ path ('search') }}">
+        <label>Rechercher conge par id conge</label>
+        <input type="text" name="search"><input type="submit" value="Recherche">
+    </form>
+
 
     {% for x in listemploye %}
 
         <tr>
 
-
-            <td> {{x.idemp}}</td>
+            <td> <a href="{{ path('search') }}">{{x.idemp}}</a></td>
             <td> {{x.nomemp}}</td>
             <td> {{x.prenomemp}}</td>
             <td> {{x.numtelemp}}</td>
             <td> {{x.adresseemp}}</td>
+           <td>{{ x.conges |join  }}</td>
 
             <td> <a href="{{ path('updateEmploye',{'idemp':x.idemp}) }}">Update employe</a></td>
             <td> <a href="{{ path('delete',{'idemp':x.idemp}) }}">Delete employe</a></td>

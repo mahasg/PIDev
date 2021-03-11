@@ -46,5 +46,24 @@ class CongeRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
+
+
+    ->orWhere('m.prenom_medecin Like :data ')->orWhere('m.specialite Like :data ')
     */
+    public function Searchid($idemp)
+    {
+        return $this->createQueryBuilder('i')
+            ->where('i.idconge LIKE :data')
+            ->setParameter('data', '%'.$idemp.'%')
+            ->getQuery()->getResult()
+            ;
+    }
+    public function OrderBydate()
+    {
+        return $this->createQueryBuilder('d')
+            ->orderBy('d.dateconge','ASC')
+            ->getQuery()->getResult()
+            ;
+
+    }
 }

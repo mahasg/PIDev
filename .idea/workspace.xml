@@ -124,7 +124,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../piDEV-e-care" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -144,7 +144,7 @@
       <updated>1614373711393</updated>
       <workItem from="1614373712460" duration="7687000" />
       <workItem from="1614704727679" duration="4165000" />
-      <workItem from="1614787100206" duration="2554000" />
+      <workItem from="1614787100206" duration="5118000" />
     </task>
     <servers />
   </component>
@@ -156,6 +156,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="45" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1614705937889" />
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1614850768981">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1614850768981" />
     <state x="382" y="86" key="NewPhpClassDialog" timestamp="1614795204180">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

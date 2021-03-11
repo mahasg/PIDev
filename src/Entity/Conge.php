@@ -29,7 +29,7 @@ class Conge
     /**
      * @ORM\Column(type="date")
      * @Assert\NotBlank(message="champs obligatoire")
-     * @Assert\Date()
+     * @Assert\GreaterThan("today")
      */
     public $dateconge;
 
@@ -114,6 +114,12 @@ class Conge
         $this->employe = $employe;
 
         return $this;
+    }
+
+    public function __toString(): ?string
+    {
+        // TODO: Implement __toString() method.
+        return $this->idconge;
     }
 
 

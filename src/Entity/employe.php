@@ -24,7 +24,6 @@ class employe
      * @ORM\Column(type="integer")
      * @Assert\NotBlank(message="champs obligatoire")
      * @Assert\Length(min=3,max=3)
-     * @Assert\Unique(message="entrez l id correct")
      */
     public $idemp;
 
@@ -57,7 +56,7 @@ class employe
     /**
      * @ORM\OneToMany(targetEntity=Conge::class, mappedBy="employe")
      */
-    private $conges;
+    public $conges;
 
     public function __construct()
     {
@@ -167,7 +166,7 @@ class employe
     public function __toString(): ?string
     {
         // TODO: Implement __toString() method.
-        return $this->idemp ;
+        return $this->idemp;
 
     }
 

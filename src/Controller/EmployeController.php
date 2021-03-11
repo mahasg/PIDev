@@ -6,6 +6,8 @@ use App\Entity\employe;
 
 
 use App\Form\EmployeType;
+use App\Repository\CongeRepository;
+use App\Repository\EmployeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -84,4 +86,14 @@ class EmployeController extends AbstractController
         $em->flush();
         return $this->redirectToRoute("afficher");
     }
+    /**
+     * @Route ("/search",name="search")
+     */
+    public function recherche(CongeRepository $repository , Request $request)
+    {
+        $data=$request->get('search');
+        $conge=$repository->Searchid($data);
+        return $this->render('conge/afficherc.html.twig',array('listconge'=>$conge));
+    }
+
 }

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Conge;
 
 use App\Form\CongeType;
+use App\Repository\CongeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -86,6 +87,14 @@ class CongeController extends AbstractController
         $em->flush();
         return $this->redirectToRoute("afficherc");
     }
-
+    /**
+     * @Route ("/tri",name="tri")
+     */
+    public function tri(CongeRepository $repository , Request $request)
+    {
+        //$data=$request->get('search');
+        $conge=$repository->OrderBydate();
+        return $this->render('conge/afficherc.html.twig',array('listconge'=>$conge));
+    }
 
 }
