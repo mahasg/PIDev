@@ -1,0 +1,160 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<table border="2">
+<div class="chit-chat-heading">liste conges</div>
+    <tr>
+
+        <td>date conge</td>
+        <td>motif conge</td>
+        <td>nombre jours conge</td>
+        <td>id employe correspondant</td>
+
+
+    </tr>
+    <form method="post" action="{{ path ('tri') }}">
+        <label>trier par date</label>
+       <input type="submit" value="tri">
+    </form>
+    {% for x in listconge %}
+
+        <tr>
+
+
+
+            <td> {{x.dateconge|date('Y-m-d')}}</td>
+            <td> {{x.motifconge}}</td>
+            <td> {{x.nbjourconge}}</td>
+            <td> {{x.employe}}</td>
+
+
+
+
+
+
+
+
+           <html>
+             <head>
+               <!--Load the AJAX API-->
+               <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+               <script type="text/javascript">
+
+                 // Load the Visualization API and the corechart package.
+                 google.charts.load('current', {'packages':['corechart']});
+
+                 // Set a callback to run when the Google Visualization API is loaded.
+                 google.charts.setOnLoadCallback(drawChart);
+
+                 // Callback that creates and populates a data table,
+                 // instantiates the pie chart, passes in the data and
+                 // draws it.
+                 function drawChart() {
+
+                   // Create the data table.
+                   var data = new google.visualization.DataTable();
+                   data.addColumn('string', 'Topping');
+                   data.addColumn('number', 'Slices');
+                   {% for x in listconge %}data.addRows([
+                                       ['nombrede jours de conges demandés pour l employe qui a une reference {{x.employe}}',{{ x.nbjourconge  }}],
+                                         ['nombre de jours limites permis ',60  ]
+                                         ]);{% endfor %}
+
+                   // Set chart options
+                   var options = {'title':'statistique des jours de conges de maternité pour l employe qui a une reference {{x.employe}} : il faut que le nombre de jours de dépasse pas la moitié du diagramme! refusé sinon',
+                                  'width':400,
+                                  'height':300};
+
+                   // Instantiate and draw our chart, passing in some options.
+                   var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                   chart.draw(data, options);
+                 }
+               </script>
+
+
+                  <!--Load the AJAX API-->
+                              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                              <script type="text/javascript">
+
+                                // Load the Visualization API and the corechart package.
+                                google.charts.load('current', {'packages':['corechart']});
+
+                                // Set a callback to run when the Google Visualization API is loaded.
+                                google.charts.setOnLoadCallback(drawChart);
+
+                                // Callback that creates and populates a data table,
+                                // instantiates the pie chart, passes in the data and
+                                // draws it.
+                                function drawChart() {
+
+                                  // Create the data table.
+                                  var data = new google.visualization.DataTable();
+                                  data.addColumn('string', 'Topping');
+                                  data.addColumn('number', 'Slices');
+                                  {% for x in listconge %}data.addRows([
+                                                      ['statistiques des jours de conges pour l employe qui a une reference {{x.employe}}',{{ x.nbjourconge  }}],
+                                                        ['nbs de jours limites permis ', 30  ]
+                                                        ]);{% endfor %}
+
+                                  // Set chart options
+                                  var options = {'title':'statistique des jours de conge annuel pour l employe qui a une reference {{x.employe}} dans happy park: il faut que le nombre de jours de dépasse pas la moitié du diagramme! refusé sinon',
+                                                 'width':400,
+                                                 'height':300};
+
+                                  // Instantiate and draw our chart, passing in some options.
+                                  var chart = new google.visualization.PieChart(document.getElementById('chart_div2'));
+                                  chart.draw(data, options);
+                                }
+                              </script>
+
+
+
+
+             </head>
+
+             <body>
+
+               <!--Div that will hold the pie chart-->
+            {#<div id="chart_div" aligh=left ></div>
+                   <!--Div that will hold the pie chart-->
+                              <div id="chart_div2" align=right ></div>#}
+                              <TABLE> <br><br><br><Td id="chart_div"></Td>
+                              <Td id="chart_div2"></Td>
+                              </TABLE>
+
+             </body>
+           </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </tr>
+
+    {% endfor %}
+
+</table>
+
+{% for x in listconge %}
+<div>la reference du conge est {{x.idconge}}</div>    {% endfor %}
+<form method="post" action="{{ path ('contactautoconf') }}">
+        <label>confirmer conge</label>
+       <input type="submit" value="confirmer">
+    </form>
+    <form method="post" action="{{ path ('contactautoref') }}">
+            <label>refuser conge</label>
+           <input type="submit" value="refuser">
+        </form>
+{% endblock  %}

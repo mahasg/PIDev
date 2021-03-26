@@ -36,6 +36,17 @@ class CongeController extends AbstractController
 
     }
 
+
+    /**
+     * @Route("/afficherc2", name="afficherc2")
+     */
+    public function affichersc2()
+    {
+        $conge = $this->getDoctrine()->getRepository(Conge::class)->findAll();
+        return $this->render('conge/afficherc2.html.twig',array('listconge'=>$conge));
+
+    }
+
     /**
      * @Route("/addConge", name="addConge")
      * @param Request $request
@@ -87,6 +98,21 @@ class CongeController extends AbstractController
         $em->flush();
         return $this->redirectToRoute("afficherc");
     }
+
+    /**
+     * @Route("/deletecs/{idconge}", name="deletecs")
+     * @param $idconge
+     * @return RedirectResponse
+     */
+    public function deletes($idconge)
+    {
+        $Conge = $this->getDoctrine()->getRepository(Conge::class)->find($idconge);
+        $em=$this->getDoctrine()->getManager();
+        $em->remove($Conge);
+        $em->flush();
+        return $this->redirectToRoute("afficherc2");
+    }
+
     /**
      * @Route ("/tri",name="tri")
      */

@@ -93,7 +93,7 @@ class EmployeController extends AbstractController
     {
         $data=$request->get('search');
         $conge=$repository->Searchid($data);
-        return $this->render('conge/afficherc.html.twig',array('listconge'=>$conge));
+        return $this->render('conge/search.html.twig',array('listconge'=>$conge));
     }
 
 }

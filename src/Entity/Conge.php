@@ -13,6 +13,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity ;
 
 /**
  * @ORM\Entity(repositoryClass=CongeRepository::class)
+ * @UniqueEntity("idconge",message="unique")
  */
 class Conge
 {
@@ -42,7 +43,7 @@ class Conge
     /**
      * @ORM\Column(type="integer")
      * @Assert\NotBlank(message="champs obligatoire")
-     * @Assert\LessThanOrEqual(15)
+     * @Assert\LessThanOrEqual(60)
      */
     public $nbjourconge;
 
