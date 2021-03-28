@@ -44,8 +44,8 @@
 @font-face
 {
 	font-family: 'Beyond';
-	src: url('../fonts/beyond_the_mountains.otf')  format('truetype'),
-		 url('../fonts/beyond_the_mountains.ttf')  format('opentype');
+	src: url('../fonts1/beyond_the_mountains.otf')  format('truetype'),
+		 url('../fonts1/beyond_the_mountains.ttf')  format('opentype');
 }
 
 /*********************************
@@ -1087,7 +1087,7 @@ section
     appearance:none;
 	-webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
 	-webkit-user-select: none;
-	background-image: url(../images/dropdown.png);
+	background-image: url(../images1/dropdown.png);
 	background-position: center right;
 	background-repeat: no-repeat;
 	border: solid 1px #FFFFFF;

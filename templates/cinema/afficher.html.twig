@@ -1,26 +1,44 @@
 {% extends 'reclamation.html.twig' %}
 {% block title %}
-<table border="2">
-    <tr>
-        <td>salle</td>
-        <td>date</td>
-        <td>heure</td>
-        <td>film</td>
-        <td>Reserver</td>
 
-</tr>
+    <div align="right">
+        <form method="post" action="{{ path ('recherche') }}" >
+            <label style="color: black">Rechercher</label>
+            <input type="text" name="search" style="background-color: #8d4fff"><input type="submit"  style=" background-color : #6f42c1" value="Recherche" class="btn btn-default">
+        </form>
+        <div><br></div>
+            <form method="post" action="{{ path('trif') }}">
+                <input type="submit" value="Par Heure "  style=" background-color : #6f42c1" class="btn btn-default" >
+            </form>
 
-    {% for x in liststudent %}
-        <tr>
-            <td> {{x.num}}</td>
-            <td> {{ x.date |date('d/m/Y') }}</td>
-            <td> {{ x.heurep |date('H:i') }}</td>
-            <td> {{ x.film}}</td>
-            <td><button>{#  <a href="{{ path('delete',{'num':x.num}) }}">#}Réserver</button></td>
+    </div>
+    <table>
 
-        </tr>
+        {% for x in liststudent %}
+            <tr><td>
+                    <img src="{{ asset('/images/' ~ x.film.filename )}}"width="150" height="200">
+                    <br></td></tr>
+            <tr>
 
-    {% endfor %}
-</table>
+                <td style="color: black">salle  {{x.num}}<br>
+                    Nom film : {{ x.film.nomFilm}}<br>
+                    Description : {{ x.film}}<br>
+                    date :  {{ x.date |date('d/m/Y') }}<br>
+                    heure : {{ x.heurep |date('H:i') }}<br>
 
+                    <button style="background-color: #1f0733" class="btn btn-default">  <a href="{{ path('addrese',{'num':x.num}) }}">Réserver</a></button> <br>
+                    <hr noshade  size="3"  width="700">
+                    <br>
+
+                </td>
+
+            </tr>
+
+
+        {% endfor %}
+
+    </table>
+
+    <div  style="color: black"  class="btn btn-default">
+        {{ knp_pagination_render(liststudent) }}</div>
 {% endblock %}

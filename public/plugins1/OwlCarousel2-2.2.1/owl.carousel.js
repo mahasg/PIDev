@@ -1372,7 +1372,7 @@
 	};
 
 	/**
-	 * Preloads images with auto width.
+	 * Preloads images1 with auto width.
 	 * @todo Replace by a more generic approach
 	 * @protected
 	 */

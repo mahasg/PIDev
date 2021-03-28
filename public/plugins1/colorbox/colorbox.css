@@ -22,7 +22,7 @@
 */
 #cboxOverlay
 {
-    /*background:url(images/overlay.png) repeat 0 0;*/
+    /*background:url(images1/overlay.png) repeat 0 0;*/
     background: rgba(0,0,0,0.95);
     opacity: 0.9; filter: alpha(opacity = 90);
 }
