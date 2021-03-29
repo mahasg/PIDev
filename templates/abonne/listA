@@ -1,0 +1,24 @@
+<h1>Backoffice</h1>
+<h2>Listes des Abonnees</h2>
+<table border="2">
+    <tr>
+        <th> ID</th>
+        <th> Nom</th>
+        <th> Prenom </th>
+        <th> Guides </th>
+
+
+
+    <tr {% for i in abonne %}>
+
+        <td>{{ i.id }}</td>
+        <td>{{ i.nom }}</td>
+        <td>{{ i.prenom }}</td>
+        <td>{{ i.guide }}</td>
+
+
+
+    </tr    {% endfor %} >
+
+    </tr>
+</table>

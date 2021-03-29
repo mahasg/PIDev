@@ -1,0 +1,8 @@
+ {% for i in reclamation %}
+
+ {{ i.description }}
+{{ i.datee |date("d/m/y") }}
+ {{ i.field }}
+{{ i.abonne}}
+ {{ i.rate}}
+ {% endfor %}

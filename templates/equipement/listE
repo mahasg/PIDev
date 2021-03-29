@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+{% block equi %}
+<div {# class="chit-chat-layer1" #}>
+<div {# class="col-md-6 chit-chat-layer1-left"#}>
+
+    <div class="header-left">
+
+        <div align="center">
+            <h2>Liste des Equipements </h2>
+        </div>
+
+        <table>
+            <tr>
+                <td>
+                    <div class="search-box">
+                        <form method="post" id="contactForm" action="{{ path('recherche') }}" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+                        <div class="search_item">
+                            <div style='align-content: center'>
+                                <div class="col-md-8 col-sm-8">
+                                    prix d'entrée 1 :
+                                    <input type="number" placeholder="Search1..." required="" name="search1"></br>
+
+                                    prix d'entrée 2 :
+                                    <input type="number" placeholder="Search2..." required="" name="search2">
+
+                                    <input type="submit" value="rechercher"  class="btn btn-success">
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                        {#  <form  method="post" action="{{ path('search') }}">
+                        <input type="text" placeholder="Search..." required="" name="search">
+                        <input type="submit" value="Search">
+                       </form>#}
+                    </div><!--//end-search-box-->
+                </td>
+                <td>
+                    <form  action="{{ path('triE') }}">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="bi bi-sort-down-alt" viewBox="0 0 16 16" >
+                                <path d="M3.5 3.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 12.293V3.5zm4 .5a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1h-1zm0 3a.5.5 0 0 1 0-1h3a.5.5 0 0 1 0 1h-3zm0 3a.5.5 0 0 1 0-1h5a.5.5 0 0 1 0 1h-5zM7 12.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7a.5.5 0 0 0-.5.5z"/>
+                            </svg>
+                        </button>
+                    </form>
+                    <div class="clearfix"> </div>
+
+                </td>
+            </tr>
+        </table>
+        <div  class="table-responsive" style="width: 200%">
+            <table class="table table-hover" style="width: 200%" >
+                <thead>
+                <tr>
+                    <th >Reference</th>
+                    <th>Nom Equipement  </th>
+                    <th>Prix Equipement  </th>
+                    <th>Equipement date  </th>
+                    <th >Num Salle Cinema</th>
+                    <th >Resto</th>
+                    <th class="column-title no-link last"><span class="nobr">Update</span></th>
+                    <th class="column-title no-link last"><span class="nobr">Delete</span></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for x in equipement %}
+                    <tr>
+                        <td> {{ x.ref}} </td>
+                        <td> {{ x.nome }} </td>
+                        <td> {{ x.prix }} </td>
+                        <td> {{ x.dates|date("d/m/y") }} </td>
+                        <td> {{ x.cinema }} </td>
+                        <td> {{ x.resto }} </td>
+                        <td><a href="{{ path("update", {'id':x.id}) }}"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-menu-up" viewBox="0 0 16 16">
+                                    <path d="M7.646 15.854a.5.5 0 0 0 .708 0L10.207 14H14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3.793l1.853 1.854zM1 9V6h14v3H1zm14 1v2a1 1 0 0 1-1 1h-3.793a1 1 0 0 0-.707.293l-1.5 1.5-1.5-1.5A1 1 0 0 0 5.793 13H2a1 1 0 0 1-1-1v-2h14zm0-5H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v2zM2 11.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 0-1h-8a.5.5 0 0 0-.5.5zm0-4a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11a.5.5 0 0 0-.5.5zm0-4a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 0-1h-6a.5.5 0 0 0-.5.5z"/>
+                                </svg></a></td>
+                        <td><a href="{{ path("suppe", {'id':x.id}) }}"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16">
+                                    <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"/>
+                                </svg></a></td>
+
+
+                    </tr>
+
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+
+{% endblock %}

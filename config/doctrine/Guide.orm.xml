@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="App\Entity\Guide" table="guide">
+    <indexes>
+      <index name="IDX_CA9EC735C325A696" columns="abonne_id"/>
+    </indexes>
+    <id name="idguide" type="integer" column="idguide">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nomguide" type="string" column="nomguide" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="prenomguide" type="string" column="prenomguide" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="activite" type="string" column="activite" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="agenda" type="date" column="agenda" nullable="true"/>
+    <field name="agendatime" type="time" column="agendatime" nullable="true"/>
+    <many-to-one field="abonne" target-entity="Abonne" fetch="LAZY">
+      <join-columns>
+        <join-column name="abonne_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

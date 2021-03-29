@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+
+    <div class="section-title">
+
+        <h2>Ajouter un Equipement</h2>
+        <br><br>
+
+        {{ form_start(formE,{'attr':{'novalidate' : 'novalidate'}}) }}
+        {{   form_errors(formE.ref) }}
+        {{   form_errors(formE.nome) }}
+        {{   form_errors(formE.cinema) }}
+        {{   form_errors(formE.resto) }}
+        {{   form_errors(formE.prix) }}
+        {{   form_errors(formE.dates) }}
+        {{ form_end(formE) }}
+    </div>
+{% endblock %}

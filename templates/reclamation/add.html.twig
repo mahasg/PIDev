@@ -1,0 +1,121 @@
+{% extends 'reclamation.html.twig' %}
+{% block title %}
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Reclamation</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Travelix Project">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{{ asset('styles1/bootstrap4/bootstrap.min.css') }}">
+        <link href="{{ asset('plugins1/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('styles1/contact_styles.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('styles1/contact_responsive.css') }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+    </head>
+
+    <body>
+
+    <div class="super_container">
+
+        <!-- Header -->
+
+        <div class="home">
+            <div class="home_background parallax-window" data-parallax="scroll" ><img src="{{ asset('images1/about_background1.jpg') }}" style="width: 100%;height: 320%" ></div>
+            <div class="home_content">
+                <div class="home_title">Reclamation</div>
+            </div>
+        </div>
+        <div class="contact_form_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+
+                        <!-- Contact Form -->
+                        <div  class="contact_form_container"  >
+
+                                <div class="contact_title text-center">get in touch</div>
+                                {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+
+                                 {{ form_row(form.abonne, {'attr': {'class': 'form-control'}}) }}
+
+                                {{ form_row(form.Field, {'attr': {'class': 'form-control'}}) }}
+
+                                {{ form_row(form.description, {'attr': {'class': 'form-control'}}) }}
+
+<br>
+                            <div action="{{ path('addrec') }}" method="post">
+                            <div class="rateyo" id= "rating"
+                                 data-rateyo-rating="4"
+                                 data-rateyo-num-stars="5"
+                                 data-rateyo-score="3">
+                            </div>
+
+                            <span class='result'>0</span>
+                            <input type="hidden" name="rating">
+
+                            </div>
+
+
+                            <button type="submit" id="form_submit_button" class="form_submit_button button trans_200" >send message<span></span><span></span><span></span></button>
+
+                            {{ form_end(form) }}
+                            <br><br>
+
+
+
+
+
+
+
+                        </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <script src="{{ asset('js1/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ asset('styles1/bootstrap4/popper.js') }}"></script>
+    <script src="{{ asset('styles1/bootstrap4/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('styles1/bootstrap4/bootstrap.min.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+    <script src="{{ asset('js1/contact_custom.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+
+    <script>
+
+
+        $(function () {
+            $(".rateyo").rateYo().on("rateyo.change", function (e, data) {
+                var rating = data.rating;
+                $(this).parent().find('.score').text('score :'+ $(this).attr('data-rateyo-score'));
+                $(this).parent().find('.result').text('rating :'+ rating);
+                $(this).parent().find('input[name=rating]').val(rating); //add rating value to input field
+            });
+        });
+
+    </script>
+
+    </body>
+
+    </html>
+
+{% endblock %}

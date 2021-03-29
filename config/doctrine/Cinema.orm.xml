@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="App\Entity\Cinema" table="cinema">
+    <indexes>
+      <index name="IDX_D48304B499C2681F" columns="Film_id"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="date" type="date" column="date" nullable="false"/>
+    <field name="heurep" type="time" column="heurep" nullable="false"/>
+    <field name="nbr" type="integer" column="nbr" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <many-to-one field="film" target-entity="Film" fetch="LAZY">
+      <join-columns>
+        <join-column name="Film_id" referenced-column-name="idfilm"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
