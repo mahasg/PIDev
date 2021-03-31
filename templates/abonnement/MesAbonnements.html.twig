@@ -1,0 +1,219 @@
+{% extends 'front.html.twig' %}
+
+
+{% block javascripts %}
+    <style>
+        .label {
+            color: white;
+            padding: 0px;
+            font-family: Arial;
+        }
+        .success {background-color: #4CAF50;} /* Green */
+        .info {background-color: #2196F3;} /* Blue */
+        .warning {background-color: #ff9800;} /* Orange */
+        .danger {background-color: #f44336;} /* Red */
+        .other {background-color: #e7e7e7; color: black;} /* Gray */
+    </style>
+{% endblock %}
+
+
+
+{% block body %}
+    <div class="super_container">
+
+        <!-- Header -->
+
+        <header class="header">
+
+            <!-- Top Bar -->
+
+
+            <!-- Main Navigation -->
+
+            <nav class="main_nav">
+                <div class="container">
+                    <div class="row">
+                        <div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo_container">
+                                <div class="logo"><a href="#"><img src="{{ asset('images1/logo.png') }}" alt="">HappyPark</a></div>
+                            </div>
+                            <div class="main_nav_container ml-auto">
+                                <ul class="main_nav_list">
+                                    <li class="main_nav_item"><a href="#">home</a></li>
+                                    <li class="main_nav_item"><a href="about.html">about us</a></li>
+                                    <li class="main_nav_item"><a href="offers.html">offers</a></li>
+
+                                    <li class="main_nav_item"><a href="blog.html">news</a></li>
+                                    <li class="main_nav_item"><a href="{{ path('ListTypeAbonnement')}}">Services</a></li>
+
+                                    {% if not app.user %}
+                                        <li class="main_nav_item"><a href="{{ path('security_login') }}">Connexion</a></li>
+                                    {% else %}
+                                        <li class="main_nav_item"><a href="{{ path('security_logout') }}">Deconnexion</a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                            <div class="content_search ml-lg-0 ml-auto">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     width="17px" height="17px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+								<g>
+                                    <g>
+                                        <g>
+                                            <path class="mag_glass" fill="#FFFFFF" d="M78.438,216.78c0,57.906,22.55,112.343,63.493,153.287c40.945,40.944,95.383,63.494,153.287,63.494
+											s112.344-22.55,153.287-63.494C489.451,329.123,512,274.686,512,216.78c0-57.904-22.549-112.342-63.494-153.286
+											C407.563,22.549,353.124,0,295.219,0c-57.904,0-112.342,22.549-153.287,63.494C100.988,104.438,78.439,158.876,78.438,216.78z
+											M119.804,216.78c0-96.725,78.69-175.416,175.415-175.416s175.418,78.691,175.418,175.416
+											c0,96.725-78.691,175.416-175.416,175.416C198.495,392.195,119.804,313.505,119.804,216.78z"/>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path class="mag_glass" fill="#FFFFFF" d="M6.057,505.942c4.038,4.039,9.332,6.058,14.625,6.058s10.587-2.019,14.625-6.058L171.268,369.98
+											c8.076-8.076,8.076-21.172,0-29.248c-8.076-8.078-21.172-8.078-29.249,0L6.057,476.693
+											C-2.019,484.77-2.019,497.865,6.057,505.942z"/>
+                                        </g>
+                                    </g>
+                                </g>
+							</svg>
+                            </div>
+
+                            <form id="search_form" class="search_form bez_1">
+                                <input type="search" class="search_content_input bez_1">
+                            </form>
+
+                            <div class="hamburger">
+                                <i class="fa fa-bars trans_200"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+        </header>
+
+
+
+        <!-- Home -->
+
+
+
+
+        <!-- Home Slider -->
+
+
+
+    </div>
+
+
+    <!-- Intro -->
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+
+
+
+
+
+    <!-- ---------------------------------------------------------------------------- -->
+
+
+
+
+    <div class="offers">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h2 class="section_title">Mes Abonnements</h2>
+                </div>
+            </div>
+            <div class="row offers_items">
+
+                <!-- Offers Item -->
+                {%  for ta in mes %}
+                    <div class="col-lg-6 offers_col" >
+                        <div class="offers_item">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="offers_image_container">
+                                        <!-- Image by https://unsplash.com/@kensuarez -->
+                                        <div class="offers_image_background" style="background-image:url({{ asset('public/images/' ~ ta.typeabonnement.image) }})"></div>
+
+                                        <div class="offer_name"><a href="#">{{ ta.typeabonnement.type }}</a></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="offers_content">
+                                        <div class="offers_price">{{ ta.typeabonnement.prix }} DT<span>par mois</span></div>
+
+                                        <p class="offers_text">{{ ta.typeabonnement.description }}</p>
+                                        {# endDate and startDate are strings or DateTime objects #}
+                                        {% set difference_days_1 = date( 'now' ).diff(date(ta.datedemande)) %}
+                                        {% set leftDays = difference_days_1.days %}
+                                        {% set difference_days_2 = date(date( 'now' )).diff(ta.datedebut) %}
+                                        {% set left_days_expire = difference_days_2.days %}
+
+                                        {% if left_days_expire > 0 and  ta.valide %}
+                                        <h3><font  color="red">Abonnement expiré</font> </h3>
+{% else %}
+                                        {% if leftDays > 2 and not ta.valide %}
+                                            <h3><font  color="red">Date de paiement dépassée</font> </h3>
+                                        {% else %}
+
+                                        {% if ta.valide %}
+                                        <p class="offers_text">Du {{ ta.datedebut|date('Y-m-d') }} au {{ ta.datefin|date('Y-m-d') }}</p>
+
+
+                                        <h3><font  color="#2e8b57">Validé</font> </h3>
+{% else %}                                           <h3><font  color="red">En attente de paiement</font> </h3>
+{% endif %}
+                                        {% endif %}
+    {% endif %}
+
+                                        <div class="offers_link"><a href="{{ path('DeleteAbonnement',{'id': ta.id })}}">Annuler l'abonnement</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+
+                <!-- Offers Item -->
+
+
+            </div>
+        </div>
+    </div>
+    <!-- ---------------------------------------------------------------------------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    </body>
+
+
+    </html>
+{% endblock %}
+
+
+

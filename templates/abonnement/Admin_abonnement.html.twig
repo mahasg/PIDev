@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+{% block zero %}{% endblock %}
+
+{% block one  %}
+    <div class="work-progres">
+        <div class="chit-chat-heading">
+            Demandes d'abonnement récentes (depuis 2 jours)
+        </div>
+        <br>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom et prénom</th>
+
+                    <th>Type d'abonnement</th>
+                    <th>Date demande</th>
+
+                    <th>Situation</th>
+                    <th>action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {%  for a in abonnement %}
+                <tr>
+                    <td>{{a.id }} </td>
+                    <td>      {{a.abonne.nomabonne }} {{a.abonne.prenomabonne }}     </td>
+                    <td>      {{a.typeabonnement.type}}   </td>
+
+                    <td> {{a.datedemande |date('d/m/Y')}}</td>
+                    {% if a.valide %}
+                    <td><span class="label label-success">Validé</span></td>
+{% else %}
+                    <td><span class="label label-warning">En attente</span></td>
+    <td> <a href=" {{ path('validerAbo',{'id':a.id}) }}" >Valider </a> </td>
+
+                    {% endif %}
+                    <td> <a href="" > </a> </td>
+
+
+                </tr>
+
+{% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+{% block two %} <!-- Pie chart -->
+
+    <div class="chart-other">
+        <h3>Abonnement Validé vs en attente (depuis 2 jours)</h3>
+        <canvas id="pie" height="270" width="415" style="width: 415px; height: 270px;"></canvas>
+        <script>
+            var pieData = [
+
+                {
+                    value : {{ nbEnAttente }} ,
+                    color : "#FC8213"
+                },
+                {
+                    value : {{ nbValide }} ,
+                    color : "#8BC34A"
+                }
+
+            ];
+            new Chart(document.getElementById("pie").getContext("2d")).Pie(pieData);
+        </script>
+    </div>
+
+
+
+
+
+{% endblock %}
+{% block three %}
+{% endblock %}
+
+    {% block four %}
+    {% endblock %}
+
+    {% block five %}
+    {% endblock %}

@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+{% block title  %}
+
+    <h1> Liste des abonnements </h1>
+    <script src="{{ asset('js/jquery.min.js') }}">
+
+    </script> <form method="post" action="{{ path('tri') }}">
+    <input type="submit" value="Par Jour ">
+</form>
+
+    <table
+            id="tableac";
+
+            border="1">
+        <tr>
+
+            <th>ID</th>
+
+            <th> Nom</th>
+            <th>Prénom </th>
+
+
+            <th> L'id du Type d'abonnement</th>
+            <th> Date debut  </th>
+            <th> Date fin </th>
+            <th> Valide </th>
+            <th> Date demande </th>
+
+
+
+        </tr>
+        <tr {%  for a in abonnement %}>
+            <td>{{a.id }} </td>
+            <td> {{a.abonne.nomabonne }}</td>
+            <td> {{a.abonne.prenomabonne }}</td>
+
+            <td> {{a.typeabonnement.type }}</td>
+            <td> {{a.datedebut |date('d/m/Y') }}</td>
+            <td>{{a.datefin |date('d/m/Y') }}</td>
+
+            <td> {{a.valide  }}</td>
+            <td> {{a.datedemande |date('d/m/Y')}}</td>
+
+
+
+
+            <td> <a href=" {{ path('da',{'id':a.id}) }}" >Delete </a> </td>
+            <td> <a href=" {{ path('validerAbo',{'id':a.id}) }}" >Valider </a> </td>
+
+
+            <script>
+                $(document).ready(function(){
+                    $('#search').keyup(function(){
+                        search_table($(this).val());
+                    });
+                    function search_table(value){
+                        $('#tableac tbody tr').each(function(){
+                            var found = 'false';
+                            $(this).each(function(){
+                                if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                                {
+                                    found = 'true';
+                                }
+                            });
+                            if(found == 'true')
+                            {
+                                $(this).show();
+
+                            }
+                            else
+                            {
+                                $(this).hide();
+
+                            }
+                        });
+                    }
+                });
+            </script>
+
+        </tr {% endfor %}>
+
+        <input type="text" id="search" name="search" class="form-control" placeholder="Search">
+
+
+
+
+    </table>
+
+
+
+
+
+    </body>
+
+
+
+    </html>{% endblock %}

@@ -1,0 +1,11 @@
+Bienvenue dans HappyPark
+Votre demande  a bien été enregistrée
+Prière de passer au local de HappyPark pour régler le montant requis au plus tard deux jours après la date de
+la demande
+{{ total_quantity }} choix !
+Total : {{ total }} DT
+{%  for item in items %}
+    Catégorie : {{ item.ta.type}}, Prix : {{ item.ta.prix}}
+{% endfor %}
+A bientôt
+Happy Park

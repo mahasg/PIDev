@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block zero %}{% endblock %}
+{% block one  %}
+
+    <h1> Liste des Abonnés </h1>
+    <script src="{{ asset('js/jquery.min.js') }}">
+
+    </script> <form method="post" action="{{ path('tri') }}">
+    <input type="submit" value="Par Jour ">
+</form>
+
+    <table
+            id="tableac";
+
+            border="1">
+        <tr>
+
+            <th>ID</th>
+
+            <th> Nom</th>
+
+            <th> Prenom</th>
+            <th> Mail </th>
+            <th> Date de naissance </th>
+            <th> Telephone </th>
+            <th> Password </th>
+
+
+
+        </tr>
+        <tr {%  for a in abonne %}>
+            <td>{{ a.id }} </td>
+            <td> {{ a.nomabonne }}</td>
+            <td> {{ a.prenomabonne }}</td>
+            <td> {{ a.mailabonne }}</td>
+            <td>{{ a.datenaissabonne |date('d/m/Y') }}</td>
+
+            <td> {{ a.telephoneabonne }}</td>
+            <td> {{ a.password }}</td>
+
+
+
+
+            <td> <a href=" {{ path('d',{'id':a.id}) }}" >Delete </a> </td>
+
+            <script>
+                $(document).ready(function(){
+                    $('#search').keyup(function(){
+                        search_table($(this).val());
+                    });
+                    function search_table(value){
+                        $('#tableac tbody tr').each(function(){
+                            var found = 'false';
+                            $(this).each(function(){
+                                if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                                {
+                                    found = 'true';
+                                }
+                            });
+                            if(found == 'true')
+                            {
+                                $(this).show();
+
+                            }
+                            else
+                            {
+                                $(this).hide();
+
+                            }
+                        });
+                    }
+                });
+            </script>
+
+        </tr {% endfor %}>
+
+        <input type="text" id="search" name="search" class="form-control" placeholder="Search">
+
+
+
+
+    </table>
+
+
+
+{% endblock %}
+{% block two %} <!-- Pie chart -->
+
+{% block three %}
+{% endblock %}
+
+    {% block four %}
+    {% endblock %}
+
+    {% block five %}
+        {% endblock %}
+{% endblock %}
