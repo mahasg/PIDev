@@ -1,0 +1,43 @@
+eventIndex:
+    path:     /event
+    defaults: { _controller: EventBundle:Evenement:show }
+
+Index:
+    path:     /event
+    defaults: { _controller: EventBundle:Comment:show }
+
+eventBack:
+    path:     /eventBack
+    defaults: { _controller: EventBundle:Evenement:showBack }
+
+QuitterEv:
+    path:     /event//QuitterEv/{id}
+    defaults: { _controller: EventBundle:Evenement:QuitterEv }
+
+ParticiperEv:
+    path:     /ParticiperEv/{id}
+    defaults: { _controller: EventBundle:Evenement:Participer }
+
+updateEvenement:
+    path:     /updateEvenement/{id}
+    defaults: { _controller: EventBundle:Evenement:updateEvent }
+
+deleteEvenement:
+    path:     /delet/{id}
+    defaults: { _controller: EventBundle:Evenement:deleteEvent }
+
+AjoutEvent:
+    path:     /addEvent
+    defaults: { _controller: EventBundle:Evenement:addEvent }
+
+deleteComment:
+    path:     /delete/{id}
+    defaults: { _controller: EventBundle:Comment:deleteComment }
+
+AjoutComment:
+    path:     /event
+    defaults: { _controller: EventBundle:Comment:addComment }
+
+event_pdf:
+    path: /pdf/{nom}/{Date}/{Date_Fin}/{capacite}/{emplacement}
+    defaults: { _controller: EventBundle:Evenement:pdf }

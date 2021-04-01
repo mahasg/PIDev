@@ -1,0 +1,75 @@
+{% extends 'index.html.twig' %}
+{% block event %}
+        {% for x in listevenement %}
+
+            <div class="col-lg-4 intro_col">
+                <div class="intro_item">
+                    <div class="intro_item_overlay"></div>
+                    <!-- Image by https://unsplash.com/@dnevozhai -->
+                    <div class="intro_item_background" ></div>
+                    <div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
+                        <div class="intro_date">{{x.DateEvent|date('Y-m-d')}}</div>
+                        <a href="{{ path('QuitterEv', { 'id': x.id }) }}" onclick="alert('Vous Allez Quitter l event {{ x.nomEvent }}')"><p class="text-danger"><i
+                                        class="fa fa-minus text-danger"></i> Quitter</p></a>
+                        {% if (x.capacite >0) %}
+                        <div class="button intro_button">
+                            <div class="card-text text-sm-center">
+
+
+                            <div class="button_bcg"></div>
+                            <a href="{{ path('ParticiperEv', { 'id': x.id }) }}" onclick="alert('participation avec success a l`evenement : {{ x.nomEvent }} ')">
+                                <p class="text-success"><i class="fa fa-plus text-success"></i> Participer</p></a></div>
+                        </div>
+                            {% else %}
+
+
+                            <p><span  class="badge badge-danger">Complet </span></p>
+                        {% endif %}
+
+                        <div class="intro_center text-center">
+                            <h1>{{x.NomEvent}}</h1>
+                            <div class="intro_price">Capacite : {{x.Capacite}}</div>
+                            <div class="intro_price">Emplacement : {{x.Emplacement}}</div>
+                        </div>
+                    </div>
+                </div>
+               <br>
+               <br>
+            </div>
+
+
+        {% endfor %}
+{% endblock  %}
+
+{% block Comment %}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 col-md-6 col-12 pb-4">
+                    <h1>Comments</h1>
+                    {% for c in listcomment %}
+                    <div class="comment mt-4 text-justify float-left" style="background-color: white ;padding: 20px; border-radius: 10px; width: 500px"> <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40">
+                        <h4>{{c.user.nom}} {{ c.user.prenom}} </h4> <p>Event Name : {{c.event.nomEvent}}</p> <br>
+                        <p>{{c.content}}</p>
+                    </div>
+                    {% endfor %}
+
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+                    {{ form_start(formcomment) }}
+                    <form id="algin-form">
+                        <div class="form-group">
+                            <h4>Leave a comment</h4> {{ form_widget(formcomment.content,{ 'attr': {'placeholder': 'Message'} }) }}
+                        </div>
+                        <div class="form-group"> <label for="name">Event Name</label>
+                            {{ form_widget(formcomment.event) }}
+
+                        </div>
+
+                        {{ form_end(formcomment) }}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock  %}

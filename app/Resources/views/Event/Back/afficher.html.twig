@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+{% block Event %}
+
+
+
+
+<br/>
+    <div class="content mt-3">
+        <div class="animated fadeIn">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>event name</th>
+                                    <th>start date</th>
+                                    <th>end date</th>
+                                    <th>capacity</th>
+                                    <th>place</th>
+                                    <th>update</th>
+                                    <th>delete</th>
+                                    <th>print</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for x in listevenement %}
+
+                                <tr>
+                                    <td> {{x.NomEvent}}</td>
+                                    <td> {{x.DateEvent|date('Y-m-d')}}</td>
+                                    <td> {{x.DateEventFin|date('Y-m-d')}}</td>
+                                    <td> {{x.Capacite}}</td>
+                                    <td> {{x.Emplacement}}</td>
+                                    <td> <a href="{{ path('updateEvenement',{'id':x.id}) }}"><button style="border-radius: 25px;" type="button" class="btn btn-success">
+                                                <i class="fa fa-pencil-square"></i> </button></a></td>
+                                    <td> <a href="{{ path('deleteEvenement',{'id':x.id}) }}"><button style="border-radius: 25px;" type="button" class="btn btn-danger">
+                                                <i class="fa fa-trash"></i> </button></a></td>
+                                    <td><a href="{{ path('event_pdf',{'nom':x.NomEvent,'Date':x.DateEvent|date('Y-m-d'),'Date_Fin':x.DateEventFin|date('Y-m-d'),'capacite':x.capacite,'emplacement':x.emplacement}) }}"class="btn btn-outline-secondary btn-sm"><i class="fa fa-download"></i></a></td>
+
+
+
+                                    {% endfor %}
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <a href="{{ path('AjoutEvent') }}"><button type="button" class="btn btn-primary"> <i class="fa fa-plus-square"></i> Add Event</button></a>
+
+                </div>
+
+
+            </div>
+        </div><!-- .animated -->
+    </div>
+{% endblock  %}
+
+{% block Comment %}
+
+
+
+
+    <br/>
+    <div class="content mt-3">
+        <div class="animated fadeIn">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>nom User</th>
+                                    <th>nom Event</th>
+                                    <th>Content</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for c in listcomment %}
+                                <tr>
+                                    <td> {{c.user.nom}}</td>
+                                    <td> {{c.event.nomEvent}}</td>
+                                    <td> {{c.content}}</td>
+                                    <td> <a href="{{ path('deleteComment',{'id':c.id}) }}"><button style="border-radius: 25px;" type="button" class="btn btn-danger">
+                                                <i class="fa fa-trash"></i> </button></a></td>
+                                    {% endfor %}
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div><!-- .animated -->
+    </div>
+{% endblock  %}
